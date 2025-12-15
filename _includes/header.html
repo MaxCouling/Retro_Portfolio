@@ -1,14 +1,15 @@
-<header class="site-header">
-    <a class="logo" href="{{ " /" | relative_url }}">{{ site.title | escape }}</a>
+﻿<header class="site-header">
+    <a class="logo" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
     <nav class="site-nav">
         <ul>
-            <li><a href="{{ " /" | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
-            <li><a href="{{ " /cv.html" | relative_url }}"
+            <li><a href="{{ "/" | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
+            <li><a href="{{ "/cv.html" | relative_url }}"
                     class="{% if page.url contains 'cv' %}active{% endif %}">CV</a></li>
-            <li><a href="{{ " /projects.html" | relative_url }}"
+            <li><a href="{{ "/projects.html" | relative_url }}"
                     class="{% if page.url contains 'projects' %}active{% endif %}">Projects</a></li>
-            <li><a href="{{ " /blog.html" | relative_url }}"
+            <li><a href="{{ "/blog.html" | relative_url }}"
                     class="{% if page.url contains 'blog' %}active{% endif %}">Blog</a></li>
         </ul>
     </nav>
 </header>
+
