@@ -1,0 +1,31 @@
+---
+layout: default
+title: Home
+---
+
+<h1>Welcome to the Cool (Coul) zone</h1>
+
+<p class="intro">
+    Kia ora I'm Max Couling <br>
+    Cybersecurity Consultant. Python Developer. Tech Enthusiast.
+</p>
+
+<div class="card">
+    <h3>> Accessing User Profile...</h3>
+    <p>Loading... [OK]</p>
+    <p>
+        I build secure systems and write code that works.
+        Check out my <a href="{{ '/projects.html' | relative_url }}">Projects</a> to see what I'm working on,
+        or read my <a href="{{ '/cv.html' | relative_url }}">CV</a> to overlook my credentials.
+    </p>
+</div>
+
+<h2>Latest Updates</h2>
+<ul>
+    {% for post in site.posts limit:3 %}
+    <li>
+        <span style="color:var(--text-secondary)">[{{ post.date | date: "%Y-%m-%d" }}]</span>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<article class="project-detail">
+
+    <header class="project-header">
+        <h1 class="project-title">{{ page.title }}</h1>
+        <p class="project-meta">
+            <span style="color:var(--text-secondary)">[{{ page.category | upcase }}]</span>
+            {% if page.github_url %}
+            | <a href="{{ page.github_url }}" target="_blank">View Source Code</a>
+            {% endif %}
+        </p>
+    </header>
+
+    <div class="project-content">
+        {% if page.image %}
+        <div class="project-image-container"
+            style="margin-bottom: 2rem; border: 1px solid var(--text-primary); padding: 5px;">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" style="width: 100%; display: block;">
+        </div>
+        {% endif %}
+
+        {{ content }}
+    </div>
+
+    <div class="project-footer"
+        style="margin-top: 3rem; border-top: 1px dashed var(--text-primary); padding-top: 1rem;">
+        <a href="{{ '/projects.html' | relative_url }}" class="btn">
+            < Back to Database</a>
+    </div>
+
+</article>

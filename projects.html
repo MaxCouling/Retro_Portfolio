@@ -1,0 +1,57 @@
+---
+layout: default
+title: Projects
+permalink: /projects.html
+---
+
+<h1>Project Database</h1>
+
+<h2>> Software Projects</h2>
+<div class="project-grid">
+    {% assign software_projects = site.software %}
+    {% if software_projects.size > 0 %}
+    {% for project in software_projects %}
+    <div class="card">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <a href="{{ project.url | relative_url }}" class="btn">Read Details</a>
+        <a href="{{ project.github_url }}" class="btn" style="border-style:dashed;">GitHub</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <!-- Placeholder if no collection items yet -->
+    <div class="card">
+        <h3>Retro CRT Site</h3>
+        <p>This website itself! Built with Jekyll and SCSS.</p>
+        <a href="#" class="btn">Source Code</a>
+    </div>
+    <div class="card">
+        <h3>Python Automation Bot</h3>
+        <p>Automated scripts for daily tasks.</p>
+        <a href="#" class="btn">GitHub Link</a>
+    </div>
+    {% endif %}
+</div>
+
+<h2>> Hardware Projects</h2>
+<div class="project-grid">
+    {% assign hardware_projects = site.hardware %}
+    {% if hardware_projects.size > 0 %}
+    {% for project in hardware_projects %}
+    <div class="card">
+        <h3>{{ project.title }}</h3>
+        <img src="{{ project.image }}" alt="{{ project.title }}"
+            style="max-width:100%; border:1px solid var(--text-primary)">
+        <p>{{ project.description }}</p>
+        <a href="{{ project.url | relative_url }}" class="btn">View Build Log</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <!-- Placeholder -->
+    <div class="card">
+        <h3>This might be a placeholder</h3>
+        <p>This might be text for a placeholder</p>
+        <p>[thismaybeimageplaceholder]</p>
+    </div>
+    {% endif %}
+</div>
