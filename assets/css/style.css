@@ -181,8 +181,9 @@ footer {
   padding-top: 1rem;
 }
 
-/* Project Content Styles */
-.project-content img {
+/* Project and Post Content Styles */
+.project-content img,
+.post-content img {
   max-width: 45%;
   height: auto;
   border: 1px solid var(--text-primary);
@@ -192,7 +193,9 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .project-content img {
+
+  .project-content img,
+  .post-content img {
     max-width: 100%;
     margin: 10px 0;
   }
