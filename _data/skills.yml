@@ -1,17 +1,8 @@
 - category: Languages
   items: 
     - Python
-    - JavaScript
     - HTML/CSS
-    - Ruby
     - SQL
-
-- category: Security
-  items:
-    - Azure Sentinel
-    - IDPS
-    - Penetration Testing
-    - Network Analysis
 
 - category: Tools
   items:

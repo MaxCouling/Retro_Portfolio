@@ -17,6 +17,10 @@ This project involved building a gaming console from scratch, moving beyond just
     *   **Chassis:** Laser-cut acrylic case for a retro-industrial look.
 *   **Assembly:** Hand-soldered all components.
 
+### Demo Video
+
+[![Watch the video](https://img.youtube.com/vi/gA285BnQoCE/hqdefault.jpg)](https://www.youtube.com/watch?v=gA285BnQoCE)
+
 ### Gallery
 ![Console Image 1](/assets/images/hardware/console_01.jpg)
 ![Console Image 2](/assets/images/hardware/console_02.jpg)
@@ -38,7 +42,5 @@ This project involved building a gaming console from scratch, moving beyond just
 ![Console Image 18](/assets/images/hardware/console_18.jpg)
 ![Console Image 19](/assets/images/hardware/console_19.jpg)
 
-### Demo Video
 
-[![Watch the video](https://img.youtube.com/vi/gA285BnQoCE/hqdefault.jpg)](https://www.youtube.com/watch?v=gA285BnQoCE)
 
