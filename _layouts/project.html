@@ -10,6 +10,9 @@ layout: default
             {% if page.github_url %}
             | <a href="{{ page.github_url }}" target="_blank">View Source Code</a>
             {% endif %}
+            {% if page.play_url %}
+            | <a href="{{ page.play_url | relative_url }}">&#9654; Play Now</a>
+            {% endif %}
         </p>
     </header>
 

@@ -1,0 +1,8 @@
+{%- if include.rating -%}
+<span class="stars" title="Rated {{ include.rating }} out of 5">
+    {%- for i in (1..5) -%}
+    {%- if i <= include.rating -%}<span class="star on">&#9733;</span>
+    {%- else -%}<span class="star">&#9734;</span>{%- endif -%}
+    {%- endfor -%}
+</span>
+{%- endif -%}

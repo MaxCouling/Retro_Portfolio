@@ -4,15 +4,72 @@ title: Blog
 permalink: /blog.html
 ---
 
-<h1>Transmissions & Logs</h1>
+<h1>Transmissions &amp; Logs</h1>
+
+<p class="intro">
+    Updates from the lab, plus reviews of books and games I've been into.
+    There's an <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a> if you're old-school like me.
+</p>
+
+<div class="filter-bar" id="filter-bar">
+    <button class="filter-tab active" data-filter="all">All</button>
+    {% assign cats = "" | split: "" %}
+    {% for cat in site.categories %}{% assign cats = cats | push: cat[0] %}{% endfor %}
+    {% assign cats = cats | sort %}
+    {% for cat in cats %}
+    <button class="filter-tab" data-filter="{{ cat }}">{{ cat }}</button>
+    {% endfor %}
+</div>
 
 <div class="blog-list">
     {% for post in site.posts %}
-    <div class="card">
+    <div class="card post-card" data-cats="{{ post.categories | join: ' ' }}">
         <h3 style="margin-top:0"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <span style="color:var(--text-secondary); font-size:0.9rem">{{ post.date | date: "%B %d, %Y" }}</span>
+        <span style="color:var(--text-secondary); font-size:0.9rem">
+            {{ post.date | date: "%B %d, %Y" }}
+            {% for cat in post.categories %} &nbsp;<span class="cat-badge">[{{ cat | upcase }}]</span>{% endfor %}
+        </span>
+        {% include stars.html rating=post.rating %}
         <p>{{ post.excerpt }}</p>
         <a href="{{ post.url | relative_url }}" class="btn">Read File</a>
     </div>
     {% endfor %}
 </div>
+
+<p id="filter-empty" style="display:none; color:var(--text-secondary)">
+    > No transmissions found in this category... yet.
+</p>
+
+<script>
+    (function () {
+        var tabs = document.querySelectorAll('.filter-tab');
+        var cards = document.querySelectorAll('.post-card');
+        var empty = document.getElementById('filter-empty');
+
+        function apply(filter) {
+            var shown = 0;
+            cards.forEach(function (c) {
+                var match = filter === 'all' || (' ' + c.getAttribute('data-cats') + ' ').indexOf(' ' + filter + ' ') !== -1;
+                c.style.display = match ? '' : 'none';
+                if (match) shown++;
+            });
+            empty.style.display = shown ? 'none' : '';
+            tabs.forEach(function (t) {
+                t.classList.toggle('active', t.getAttribute('data-filter') === filter);
+            });
+        }
+
+        tabs.forEach(function (t) {
+            t.addEventListener('click', function () {
+                var f = t.getAttribute('data-filter');
+                history.replaceState(null, '', f === 'all' ? '#' : '#' + f);
+                apply(f);
+            });
+        });
+
+        var initial = location.hash.replace('#', '');
+        if (initial && document.querySelector('.filter-tab[data-filter="' + initial + '"]')) {
+            apply(initial);
+        }
+    })();
+</script>

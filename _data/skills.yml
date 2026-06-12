@@ -1,12 +1,39 @@
-- category: Languages
-  items: 
-    - Python
-    - HTML/CSS
-    - SQL
-
-- category: Tools
+# Skills shown on the CV page. Edit here, the page updates itself.
+- category: Risk & Governance
   items:
-    - Docker
-    - Git
-    - VS Code
-    - Wireshark
+    - Cybersecurity Risk Assessment Authoring
+    - Exception Lifecycle Governance
+    - Audit Closure & Evidence Management
+    - Policy & Standards Alignment
+    - IRM / ServiceNow Workflows
+
+- category: Technical Security
+  items:
+    - SAST/SCA/DAST Review & Triage
+    - DNS / Domain Security Analysis
+    - Vulnerability Validation & False-Positive Analysis
+    - Pen-Test Remediation Coordination
+    - Certificate Expiry & DNSSEC Review
+
+- category: Strategy & Delivery
+  items:
+    - AppSec Operating Model Design
+    - Key Decision Documents (KDDs)
+    - Vendor Evaluation & Selection
+    - Process Automation (Copilot Studio, Power Apps)
+    - Stakeholder Engagement (CISO, Leadership, Auditors)
+
+- category: Tools & Platforms
+  items:
+    - ServiceNow (IRM)
+    - Microsoft Entra ID
+    - SailPoint IdentityNow
+    - Burp Suite
+    - PowerShell
+    - Python
+    - Proxmox
+    - Cloudflare Zero Trust
+    - Tailscale
+    - LeanIX
+    - Power Apps
+    - SharePoint

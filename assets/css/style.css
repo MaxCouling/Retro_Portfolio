@@ -200,3 +200,434 @@ footer {
     margin: 10px 0;
   }
 }
+
+/* ============================================================
+   ARCADE
+   ============================================================ */
+.arcade-cabinet {
+  border: 3px solid var(--text-secondary);
+  box-shadow: 0 0 15px var(--text-secondary), inset 0 0 25px rgba(240, 0, 240, 0.08);
+  padding: 0.75rem;
+  margin: 1.5rem 0;
+  background: #0a0a12;
+}
+
+.arcade-marquee {
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 4px;
+  color: var(--text-highlight);
+  text-shadow: 0 0 10px var(--text-highlight);
+  border: 1px solid var(--text-primary);
+  padding: 0.4rem;
+  margin-bottom: 0.75rem;
+  animation: marquee-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes marquee-glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 6px var(--text-highlight);
+  }
+
+  50% {
+    text-shadow: 0 0 16px var(--text-highlight), 0 0 30px var(--text-secondary);
+  }
+}
+
+.arcade-screen {
+  position: relative;
+  border: 2px solid var(--text-primary);
+  background: #000;
+  line-height: 0;
+}
+
+.arcade-screen iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+  display: block;
+}
+
+.coin-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.82);
+  border: 0;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  color: var(--text-highlight);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  line-height: 1.4;
+}
+
+.coin-overlay.hidden {
+  display: none;
+}
+
+.coin-blink {
+  font-size: 2rem;
+  letter-spacing: 3px;
+  animation: blink-step 1s steps(2, start) infinite;
+}
+
+.coin-sub {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+@keyframes blink-step {
+  to {
+    visibility: hidden;
+  }
+}
+
+.arcade-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.arcade-actions .btn {
+  margin-top: 0;
+}
+
+/* Touch pad: hidden unless the device's primary pointer is coarse */
+.touch-pad {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .touch-pad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.tp-cluster {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tp-mid {
+  flex-direction: column;
+}
+
+.tp-btn {
+  font-family: 'VT323', monospace;
+  font-size: 1.8rem;
+  width: 64px;
+  height: 64px;
+  background: #0a0a12;
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+  border-radius: 8px;
+  touch-action: none;
+}
+
+.tp-btn.tp-small {
+  width: 48px;
+  height: 48px;
+  font-size: 1.2rem;
+}
+
+.tp-btn.tp-action {
+  width: 76px;
+  height: 76px;
+  color: var(--text-secondary);
+  border-color: var(--text-secondary);
+  border-radius: 50%;
+}
+
+.tp-btn.held {
+  background: var(--text-primary);
+  color: #000;
+}
+
+.tp-btn.tp-action.held {
+  background: var(--text-secondary);
+}
+
+.retro-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.retro-table th,
+.retro-table td {
+  border: 1px dashed var(--text-primary);
+  padding: 0.4rem 0.8rem;
+  text-align: left;
+}
+
+.retro-table th {
+  color: var(--text-secondary);
+}
+
+.arcade-promo {
+  border-color: var(--text-highlight);
+  box-shadow: 0 0 8px var(--text-highlight);
+}
+
+/* ============================================================
+   BLOG: filter tabs, category badges, star ratings
+   ============================================================ */
+.filter-bar {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 1.5rem;
+}
+
+.filter-tab {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+}
+
+.filter-tab:hover {
+  color: var(--text-secondary);
+  border-color: var(--text-secondary);
+  text-shadow: 0 0 8px var(--text-secondary);
+}
+
+.filter-tab.active {
+  background: var(--text-primary);
+  color: #000;
+  box-shadow: 0 0 10px var(--text-primary);
+}
+
+.cat-badge {
+  color: var(--text-highlight);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.stars {
+  display: inline-block;
+  margin-left: 0.4rem;
+  letter-spacing: 2px;
+}
+
+.star {
+  color: var(--text-primary);
+  opacity: 0.45;
+}
+
+.star.on {
+  color: var(--text-highlight);
+  opacity: 1;
+  text-shadow: 0 0 6px var(--text-highlight);
+}
+
+/* ============================================================
+   HOME: current status panel
+   ============================================================ */
+.now-table {
+  border-collapse: collapse;
+}
+
+.now-table td {
+  padding: 0.15rem 0.6rem 0.15rem 0;
+  vertical-align: top;
+}
+
+.now-label {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   BOOT OVERLAY & CHEAT FLASH
+   ============================================================ */
+.boot-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 1000;
+  padding: 2rem;
+  font-family: 'VT323', monospace;
+  cursor: pointer;
+  transition: opacity 0.4s;
+}
+
+.boot-overlay.boot-fade {
+  opacity: 0;
+}
+
+.boot-lines {
+  color: var(--text-highlight);
+  font-family: inherit;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.boot-skip {
+  color: var(--text-primary);
+  opacity: 0.6;
+  animation: blink-step 1.2s steps(2, start) infinite;
+}
+
+.cheat-flash {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  background: #000;
+  color: var(--text-highlight);
+  border: 2px solid var(--text-highlight);
+  box-shadow: 0 0 25px var(--text-highlight);
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  text-align: center;
+  animation: blink-step 0.3s steps(2, start) infinite;
+}
+
+/* ============================================================
+   404
+   ============================================================ */
+.glitch-text {
+  animation: glitch-jitter 0.9s steps(2, start) infinite;
+}
+
+@keyframes glitch-jitter {
+  0% {
+    text-shadow: 2px 2px #000, -1px -1px var(--text-highlight);
+  }
+
+  50% {
+    text-shadow: -2px 1px var(--text-primary), 2px -2px var(--text-highlight);
+  }
+}
+
+.term-block {
+  font-family: inherit;
+  color: var(--text-primary);
+  border: 1px dashed var(--text-primary);
+  padding: 1rem;
+  white-space: pre-wrap;
+}
+
+.cursor-blink {
+  animation: blink-step 1s steps(2, start) infinite;
+}
+
+.error-404 ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.visit-counter-box {
+  border: 1px solid var(--text-highlight);
+  color: var(--text-highlight);
+  padding: 1px 6px;
+  letter-spacing: 2px;
+}
+
+/* ============================================================
+   ACCESSIBILITY: respect reduced motion
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+
+  .crt-overlay,
+  .coin-blink,
+  .boot-skip,
+  .cursor-blink,
+  .cheat-flash,
+  .marquee-glow,
+  .arcade-marquee,
+  .glitch-text {
+    animation: none !important;
+  }
+}
+
+/* ============================================================
+   PRINT: the CV page becomes a clean paper resume
+   ============================================================ */
+@media print {
+
+  .crt-overlay,
+  .site-header,
+  .site-footer,
+  .no-print,
+  button {
+    display: none !important;
+  }
+
+  .print-only {
+    display: inline !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 11pt;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #000;
+    text-shadow: none;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .cv-header {
+    border-bottom: 2px solid #000;
+  }
+
+  .cv-section h2 {
+    background: #000 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .job-title,
+  .now-label {
+    color: #000;
+  }
+
+  .card {
+    border: 1px solid #000;
+    box-shadow: none;
+    background: none;
+  }
+}

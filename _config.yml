@@ -1,9 +1,12 @@
 title: Max Couling
-email: your-email@example.com
+email: max@maxcouling.com
 description: >-
-  Cybersecurity Consultant & Python Developer.
+  Cybersecurity consultant by day, plush-game developer by night.
+  Projects, hardware build logs, book & game reviews — and a playable arcade.
 baseurl: ""
-url: ""
+url: "https://maxcouling.com"
+# (no timezone setting: post dates carry explicit +12/+13 offsets from new_post.py,
+#  and tzinfo is a pain on Windows)
 
 collections:
   software:
@@ -23,3 +26,11 @@ plugins:
 
 sass:
   style: compressed
+
+exclude:
+  - tools/
+  - new_post.py
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
